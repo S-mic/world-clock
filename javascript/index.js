@@ -24,7 +24,19 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
-}
+}  // Johannesburg
+  let jhbElement = document.querySelector("#jhb");
+  if (jhbElement) {
+    let jhbDateElement = jhbElement.querySelector(".date");
+    let jhbTimeElement = jhbElement.querySelector(".time");
+    let jhbTime = moment().tz("South Africa/ Johannesburg");
+
+    jhbDateElement.innerHTML = jhbTime.format("MMMM	Do YYYY");
+    jhbTimeElement.innerHTML = jhbTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
